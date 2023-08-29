@@ -5,15 +5,26 @@ const getAllTasks = (req, res) => {
 }
 
 const getTask = (req, res) => {
-  res.send('get single task from file')
+
+  try {
+    res.json({id:req.params.id})
+    
+  } catch (error) {
+    res.send(error.message)
+  }
 }
 
 const createTask = (req, res) => {
-  res.send('create from file')
+  res.json(req.body)
 }
 
 const updateTask = (req, res) => {
-  res.send('update from file')
+  try {
+    res.json({id:req.params})
+    
+  } catch (error) {
+    res.send(error.message)
+  }
 }
 
 const deleteTask = (req, res) => {
