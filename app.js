@@ -5,6 +5,8 @@ const express = require('express');
 const tasks = require('./routes/tasks')
 const app = express();
 
+require('dotenv').config();
+require('./db/connect');
 const PORT = 3000;
 
 //middleware
